@@ -1,0 +1,257 @@
+[
+  {
+    "model": "logistic",
+    "feature_set": "unsw_all_csv_preprocessed",
+    "random_seed": 42,
+    "fit_seconds": 29.461824199999683,
+    "hyperparameters": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "dual": false,
+      "fit_intercept": true,
+      "intercept_scaling": 1,
+      "l1_ratio": null,
+      "max_iter": 1000,
+      "multi_class": "auto",
+      "n_jobs": null,
+      "penalty": "l2",
+      "random_state": 42,
+      "solver": "lbfgs",
+      "tol": 0.0001,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "train": {
+      "split": "train",
+      "metrics": {
+        "accuracy": 0.9328622512703817,
+        "precision": 0.9497445417220647,
+        "recall": 0.9517181857031531,
+        "f1": 0.9507303394299585,
+        "auc": 0.9844921316407844,
+        "false_positive_rate": 0.10732142857142857,
+        "false_negative_rate": 0.04828181429684685,
+        "true_negative": 49990,
+        "false_positive": 6010,
+        "false_negative": 5762,
+        "true_positive": 113579
+      },
+      "label_distribution": {
+        "0": 56000,
+        "1": 119341
+      },
+      "prediction_distribution": {
+        "0": 55752,
+        "1": 119589
+      },
+      "score_summary": {
+        "min": 1.6853433152847981e-68,
+        "max": 1.0,
+        "mean": 0.642982900512257,
+        "std": 0.4163341458829805,
+        "p01": 1.52723647547136e-48,
+        "p05": 7.782317999258233e-20,
+        "p50": 0.8559068283146688,
+        "p95": 0.9998776067695554,
+        "p99": 0.9999537574647402
+      }
+    },
+    "test": {
+      "split": "test",
+      "metrics": {
+        "accuracy": 0.8355196035563329,
+        "precision": 0.8022897569510479,
+        "recall": 0.9306009000264713,
+        "f1": 0.8616949567988235,
+        "auc": 0.9559556038214161,
+        "false_positive_rate": 0.28097297297297297,
+        "false_negative_rate": 0.06939909997352864,
+        "true_negative": 26604,
+        "false_positive": 10396,
+        "false_negative": 3146,
+        "true_positive": 42186
+      },
+      "label_distribution": {
+        "0": 37000,
+        "1": 45332
+      },
+      "prediction_distribution": {
+        "0": 29750,
+        "1": 52582
+      },
+      "score_summary": {
+        "min": 3.589324436459903e-66,
+        "max": 1.0,
+        "mean": 0.5945960460092541,
+        "std": 0.40789612922377405,
+        "p01": 1.647200453329997e-47,
+        "p05": 4.693562715141765e-18,
+        "p50": 0.6981731497876948,
+        "p95": 0.9998713191346069,
+        "p99": 0.9999636806677658
+      }
+    },
+    "model_path": "data\\processed\\unsw_day03\\models\\logistic_unsw_all_csv_preprocessed_seed42.joblib",
+    "parameter_path": "reports\\day03_unsw\\model_parameters\\logistic_unsw_all_csv_preprocessed_seed42_parameters.json",
+    "train_prediction_path": "reports\\day03_unsw\\predictions\\logistic_unsw_all_csv_preprocessed_seed42_train_predictions.csv",
+    "test_prediction_path": "reports\\day03_unsw\\predictions\\logistic_unsw_all_csv_preprocessed_seed42_test_predictions.csv",
+    "parameter_summary": {
+      "model_type": "LogisticRegression",
+      "classes": [
+        0,
+        1
+      ],
+      "n_iter": [
+        754
+      ],
+      "coefficient_shape": [
+        1,
+        194
+      ],
+      "intercept_shape": [
+        1
+      ],
+      "parameter_count": 195
+    }
+  },
+  {
+    "model": "mlp",
+    "feature_set": "unsw_all_csv_preprocessed",
+    "random_seed": 42,
+    "fit_seconds": 9.471756099999766,
+    "hyperparameters": {
+      "activation": "relu",
+      "alpha": 0.0001,
+      "batch_size": 256,
+      "beta_1": 0.9,
+      "beta_2": 0.999,
+      "early_stopping": true,
+      "epsilon": 1e-08,
+      "hidden_layer_sizes": [
+        32
+      ],
+      "learning_rate": "constant",
+      "learning_rate_init": 0.001,
+      "max_fun": 15000,
+      "max_iter": 100,
+      "momentum": 0.9,
+      "n_iter_no_change": 10,
+      "nesterovs_momentum": true,
+      "power_t": 0.5,
+      "random_state": 42,
+      "shuffle": true,
+      "solver": "adam",
+      "tol": 0.0001,
+      "validation_fraction": 0.1,
+      "verbose": false,
+      "warm_start": false
+    },
+    "train": {
+      "split": "train",
+      "metrics": {
+        "accuracy": 0.9458654849692885,
+        "precision": 0.952519052523172,
+        "recall": 0.968753404110909,
+        "f1": 0.9605676398743748,
+        "auc": 0.9897936373351512,
+        "false_positive_rate": 0.10291071428571429,
+        "false_negative_rate": 0.031246595889090924,
+        "true_negative": 50237,
+        "false_positive": 5763,
+        "false_negative": 3729,
+        "true_positive": 115612
+      },
+      "label_distribution": {
+        "0": 56000,
+        "1": 119341
+      },
+      "prediction_distribution": {
+        "0": 53966,
+        "1": 121375
+      },
+      "score_summary": {
+        "min": 4.3207863307238363e-20,
+        "max": 1.0,
+        "mean": 0.6780524849891663,
+        "std": 0.4252592921257019,
+        "p01": 3.8346296895187125e-14,
+        "p05": 1.7970913646081499e-09,
+        "p50": 0.9853283762931824,
+        "p95": 0.9999991655349731,
+        "p99": 1.0
+      }
+    },
+    "test": {
+      "split": "test",
+      "metrics": {
+        "accuracy": 0.856957197687412,
+        "precision": 0.806668007092069,
+        "recall": 0.973528633195094,
+        "f1": 0.8822782659109765,
+        "auc": 0.9737938119006679,
+        "false_positive_rate": 0.28586486486486484,
+        "false_negative_rate": 0.026471366804906027,
+        "true_negative": 26423,
+        "false_positive": 10577,
+        "false_negative": 1200,
+        "true_positive": 44132
+      },
+      "label_distribution": {
+        "0": 37000,
+        "1": 45332
+      },
+      "prediction_distribution": {
+        "0": 27623,
+        "1": 54709
+      },
+      "score_summary": {
+        "min": 2.0460629106577382e-19,
+        "max": 1.0,
+        "mean": 0.6422175168991089,
+        "std": 0.41893675923347473,
+        "p01": 4.2090194448275034e-14,
+        "p05": 2.140369592673608e-09,
+        "p50": 0.8862113654613495,
+        "p95": 0.9999972581863403,
+        "p99": 0.9999997615814209
+      }
+    },
+    "model_path": "data\\processed\\unsw_day03\\models\\mlp_unsw_all_csv_preprocessed_seed42.joblib",
+    "parameter_path": "reports\\day03_unsw\\model_parameters\\mlp_unsw_all_csv_preprocessed_seed42_parameters.json",
+    "train_prediction_path": "reports\\day03_unsw\\predictions\\mlp_unsw_all_csv_preprocessed_seed42_train_predictions.csv",
+    "test_prediction_path": "reports\\day03_unsw\\predictions\\mlp_unsw_all_csv_preprocessed_seed42_test_predictions.csv",
+    "parameter_summary": {
+      "model_type": "MLPClassifier",
+      "classes": [
+        0,
+        1
+      ],
+      "n_iter": 33,
+      "n_layers": 3,
+      "n_outputs": 1,
+      "out_activation": "logistic",
+      "loss": 0.11067208247189965,
+      "best_loss": null,
+      "best_validation_score": 0.9460507556315939,
+      "coefficient_shapes": [
+        [
+          194,
+          32
+        ],
+        [
+          32,
+          1
+        ]
+      ],
+      "intercept_shapes": [
+        [
+          32
+        ],
+        [
+          1
+        ]
+      ],
+      "parameter_count": 6273
+    }
+  }
+]

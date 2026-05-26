@@ -29,11 +29,10 @@ SafeHy-TinyNID: A Hybrid-Feature TinyML Accelerator with Safe Bounded Online Ada
 
 ## 5. Core Contributions
 Contribution 1:
-Hybrid-feature packet-path TinyML inference architecture.
+We design a hardware-friendly hybrid feature representation for packet-path NIDS and evaluate its accuracy-resource-latency trade-off against raw-packet and flow-feature baselines.
 
 Contribution 2:
-Runtime-reconfigurable TinyML core for FPGA-based NIDS.
+We implement a runtime-reconfigurable quantized TinyML inference core on a resource-constrained UltraScale FPGA.
 
 Contribution 3:
-Safe bounded online adaptation with update gating, shadow weights, validation, and rollback.
-
+We propose a safe bounded online adaptation mechanism that updates selected parameters under drift-aware gating and rollback protection.

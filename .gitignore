@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+data/raw/*.csv
+data/interim/**
+data/processed/**
+
+!data/interim/.gitkeep
+!data/processed/.gitkeep

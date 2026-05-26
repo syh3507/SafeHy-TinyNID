@@ -1,0 +1,24 @@
+{
+  "input": "data\\processed\\unsw_day03\\unsw_all_csv_preprocessed.npz",
+  "output": "data\\processed\\unsw_day03\\quantized\\unsw_all_csv_preprocessed_feature_int8.npz",
+  "scale_csv": "data\\processed\\unsw_day03\\quantized\\unsw_all_csv_preprocessed_feature_int8_scales.csv",
+  "feature_count": 194,
+  "quantization": "symmetric per-feature signed INT8 for preprocessed features",
+  "train_error": {
+    "mean_absolute_error": 0.010417602956295013,
+    "max_absolute_error": 0.76641845703125,
+    "mean_squared_error": 0.0013050124980509281
+  },
+  "test_error": {
+    "mean_absolute_error": 0.010295786894857883,
+    "max_absolute_error": 42.799713134765625,
+    "mean_squared_error": 0.0017809958662837744
+  },
+  "scale_summary": {
+    "min": 0.007874015718698502,
+    "max": 1.7421563863754272,
+    "mean": 0.06264819949865341,
+    "std": 0.19400262832641602
+  },
+  "note": "This is feature quantization only. Model weight/activation quantization comes after baseline training."
+}

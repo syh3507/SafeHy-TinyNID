@@ -1,0 +1,369 @@
+{
+  "dataset": "UNSW-NB15 official training/testing CSV",
+  "train_rows": 175341,
+  "test_rows": 82332,
+  "train_columns": 45,
+  "test_columns": 45,
+  "columns": [
+    "id",
+    "dur",
+    "proto",
+    "service",
+    "state",
+    "spkts",
+    "dpkts",
+    "sbytes",
+    "dbytes",
+    "rate",
+    "sttl",
+    "dttl",
+    "sload",
+    "dload",
+    "sloss",
+    "dloss",
+    "sinpkt",
+    "dinpkt",
+    "sjit",
+    "djit",
+    "swin",
+    "stcpb",
+    "dtcpb",
+    "dwin",
+    "tcprtt",
+    "synack",
+    "ackdat",
+    "smean",
+    "dmean",
+    "trans_depth",
+    "response_body_len",
+    "ct_srv_src",
+    "ct_state_ttl",
+    "ct_dst_ltm",
+    "ct_src_dport_ltm",
+    "ct_dst_sport_ltm",
+    "ct_dst_src_ltm",
+    "is_ftp_login",
+    "ct_ftp_cmd",
+    "ct_flw_http_mthd",
+    "ct_src_ltm",
+    "ct_srv_dst",
+    "is_sm_ips_ports",
+    "attack_cat",
+    "label"
+  ],
+  "label_column": "label",
+  "attack_category_column": "attack_cat",
+  "input_feature_count": 42,
+  "numerical_features": [
+    "dur",
+    "spkts",
+    "dpkts",
+    "sbytes",
+    "dbytes",
+    "rate",
+    "sttl",
+    "dttl",
+    "sload",
+    "dload",
+    "sloss",
+    "dloss",
+    "sinpkt",
+    "dinpkt",
+    "sjit",
+    "djit",
+    "swin",
+    "stcpb",
+    "dtcpb",
+    "dwin",
+    "tcprtt",
+    "synack",
+    "ackdat",
+    "smean",
+    "dmean",
+    "trans_depth",
+    "response_body_len",
+    "ct_srv_src",
+    "ct_state_ttl",
+    "ct_dst_ltm",
+    "ct_src_dport_ltm",
+    "ct_dst_sport_ltm",
+    "ct_dst_src_ltm",
+    "is_ftp_login",
+    "ct_ftp_cmd",
+    "ct_flw_http_mthd",
+    "ct_src_ltm",
+    "ct_srv_dst",
+    "is_sm_ips_ports"
+  ],
+  "categorical_features": [
+    "proto",
+    "service",
+    "state"
+  ],
+  "missing_values": [],
+  "feature_catalog": [
+    {
+      "feature": "id",
+      "packet_path_category": "target_or_leakage",
+      "note": "Do not use as an input feature."
+    },
+    {
+      "feature": "dur",
+      "packet_path_category": "flow_lite_candidate",
+      "note": "Duration requires timing state, but can be approximated in a small flow-lite window."
+    },
+    {
+      "feature": "proto",
+      "packet_path_category": "packet_path_candidate",
+      "note": "IP protocol field or parser-derived protocol code."
+    },
+    {
+      "feature": "service",
+      "packet_path_category": "packet_path_candidate",
+      "note": "Can be approximated from L4 ports, but UNSW service is already decoded."
+    },
+    {
+      "feature": "state",
+      "packet_path_category": "packet_path_candidate",
+      "note": "TCP state summary; packet-path use needs a small TCP/state parser."
+    },
+    {
+      "feature": "spkts",
+      "packet_path_category": "flow_lite_candidate",
+      "note": "Source packet count needs a counter."
+    },
+    {
+      "feature": "dpkts",
+      "packet_path_category": "flow_lite_candidate",
+      "note": "Destination packet count needs a counter."
+    },
+    {
+      "feature": "sbytes",
+      "packet_path_category": "packet_path_candidate",
+      "note": "Source bytes; single-packet hardware analogue is packet length."
+    },
+    {
+      "feature": "dbytes",
+      "packet_path_category": "packet_path_candidate",
+      "note": "Destination bytes; needs reverse direction or flow-lite context."
+    },
+    {
+      "feature": "rate",
+      "packet_path_category": "flow_lite_candidate",
+      "note": "Packet rate needs timing and count state."
+    },
+    {
+      "feature": "sttl",
+      "packet_path_category": "packet_path_candidate",
+      "note": "Source-side TTL-like header field."
+    },
+    {
+      "feature": "dttl",
+      "packet_path_category": "packet_path_candidate",
+      "note": "Destination-side TTL-like field; needs reverse direction context."
+    },
+    {
+      "feature": "sload",
+      "packet_path_category": "flow_lite_candidate",
+      "note": "Source load needs byte and time state."
+    },
+    {
+      "feature": "dload",
+      "packet_path_category": "flow_lite_candidate",
+      "note": "Destination load needs byte and time state."
+    },
+    {
+      "feature": "sloss",
+      "packet_path_category": "flow_lite_candidate",
+      "note": "Source loss estimate is not directly available from a stateless packet parser."
+    },
+    {
+      "feature": "dloss",
+      "packet_path_category": "flow_lite_candidate",
+      "note": "Destination loss estimate is not directly available from a stateless packet parser."
+    },
+    {
+      "feature": "sinpkt",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "Inter-packet timing needs flow history."
+    },
+    {
+      "feature": "dinpkt",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "Reverse inter-packet timing needs flow history."
+    },
+    {
+      "feature": "sjit",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "Jitter needs timestamp history."
+    },
+    {
+      "feature": "djit",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "Reverse jitter needs timestamp history."
+    },
+    {
+      "feature": "swin",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "TCP window can be parsed, but this aggregate form is flow-derived."
+    },
+    {
+      "feature": "stcpb",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "TCP base sequence value is parser-visible but dataset form is flow-derived."
+    },
+    {
+      "feature": "dtcpb",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "Reverse TCP base sequence value needs bidirectional context."
+    },
+    {
+      "feature": "dwin",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "Reverse TCP window aggregate needs bidirectional flow state."
+    },
+    {
+      "feature": "tcprtt",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "TCP RTT requires SYN/SYN-ACK/ACK timing state."
+    },
+    {
+      "feature": "synack",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "SYN-ACK timing requires handshake tracking."
+    },
+    {
+      "feature": "ackdat",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "ACK-data timing requires handshake tracking."
+    },
+    {
+      "feature": "smean",
+      "packet_path_category": "packet_path_candidate",
+      "note": "Mean source packet size; flow-lite counter/statistic."
+    },
+    {
+      "feature": "dmean",
+      "packet_path_category": "packet_path_candidate",
+      "note": "Mean destination packet size; flow-lite counter/statistic."
+    },
+    {
+      "feature": "trans_depth",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "HTTP transaction depth is application/stateful parsing."
+    },
+    {
+      "feature": "response_body_len",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "HTTP response body length is application/stateful parsing."
+    },
+    {
+      "feature": "ct_srv_src",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "Connection-count feature needs a table/window."
+    },
+    {
+      "feature": "ct_state_ttl",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "Connection-count feature needs a table/window."
+    },
+    {
+      "feature": "ct_dst_ltm",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "Connection-count feature needs a table/window."
+    },
+    {
+      "feature": "ct_src_dport_ltm",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "Connection-count feature needs a table/window."
+    },
+    {
+      "feature": "ct_dst_sport_ltm",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "Connection-count feature needs a table/window."
+    },
+    {
+      "feature": "ct_dst_src_ltm",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "Connection-count feature needs a table/window."
+    },
+    {
+      "feature": "is_ftp_login",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "Application-level FTP feature."
+    },
+    {
+      "feature": "ct_ftp_cmd",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "Application-level FTP command count."
+    },
+    {
+      "feature": "ct_flw_http_mthd",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "HTTP method count needs application parsing."
+    },
+    {
+      "feature": "ct_src_ltm",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "Connection-count feature needs a table/window."
+    },
+    {
+      "feature": "ct_srv_dst",
+      "packet_path_category": "stateful_flow_feature",
+      "note": "Connection-count feature needs a table/window."
+    },
+    {
+      "feature": "is_sm_ips_ports",
+      "packet_path_category": "packet_path_candidate",
+      "note": "Simple comparison over source/destination IP and port fields."
+    },
+    {
+      "feature": "attack_cat",
+      "packet_path_category": "target_or_leakage",
+      "note": "Do not use as an input feature."
+    },
+    {
+      "feature": "label",
+      "packet_path_category": "target_or_leakage",
+      "note": "Do not use as an input feature."
+    }
+  ],
+  "feature_dictionary_columns": [
+    "No.",
+    "Name",
+    "Type ",
+    "Description"
+  ],
+  "train_label_distribution": {
+    "0": 56000,
+    "1": 119341
+  },
+  "test_label_distribution": {
+    "0": 37000,
+    "1": 45332
+  },
+  "train_attack_category_distribution": {
+    "Analysis": 2000,
+    "Backdoor": 1746,
+    "DoS": 12264,
+    "Exploits": 33393,
+    "Fuzzers": 18184,
+    "Generic": 40000,
+    "Normal": 56000,
+    "Reconnaissance": 10491,
+    "Shellcode": 1133,
+    "Worms": 130
+  },
+  "test_attack_category_distribution": {
+    "Analysis": 677,
+    "Backdoor": 583,
+    "DoS": 4089,
+    "Exploits": 11132,
+    "Fuzzers": 6062,
+    "Generic": 18871,
+    "Normal": 37000,
+    "Reconnaissance": 3496,
+    "Shellcode": 378,
+    "Worms": 44
+  }
+}
